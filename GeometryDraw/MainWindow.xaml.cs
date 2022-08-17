@@ -15,14 +15,19 @@ using System.Windows.Shapes;
 
 namespace GeometryDraw
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+        const double AxisXCenter = 200;
+        const double AxisYCenter = 300;
+
+        
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();     
         }
     }
 }
+
+
+

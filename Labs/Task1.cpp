@@ -31,3 +31,10 @@ PointLocation FindPointLocation(Point a, Line k)
 
     return ÑomparisonResult::same;
 }
+
+ÑomparisonResult CompleteTask1(Point a, Point b, Line k)
+{
+    return CompareLocations(FindPointLocation(a,k), FindPointLocation(b, k));
+}
+
+

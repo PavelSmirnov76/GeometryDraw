@@ -1,15 +1,14 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "..\Labs\Task1.h"
+#include "../Labs/Task1.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace lab1zad1Test
+namespace LabsTests
 {
-	TEST_CLASS(lab1zad1Test)
+	TEST_CLASS(LabsTests)
 	{
-	public:
-
+	public:		
 		TEST_METHOD(Point_2_2_LocationFirstSideTest)
 		{
 
@@ -17,7 +16,7 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			PointLocation expected = PointLocation::firstSide;
 
-			PointLocation actual = Task1::FindPointLocation(a, k);
+			PointLocation actual = FindPointLocation(a, k);
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
@@ -29,7 +28,7 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			PointLocation expected = PointLocation::onLine;
 
-			PointLocation actual = Task1::FindPointLocation(a, k);
+			PointLocation actual = FindPointLocation(a, k);
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
@@ -41,7 +40,7 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			PointLocation expected = PointLocation::secondSide;
 
-			PointLocation actual = Task1::FindPointLocation(a, k);
+			PointLocation actual = FindPointLocation(a, k);
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
@@ -54,7 +53,7 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			ÑomparisonResult expected = ÑomparisonResult::different;
 
-			ÑomparisonResult actual = Task1::CompareLocations(Task1::FindPointLocation(a, k), Task1::FindPointLocation(b, k));
+			ÑomparisonResult actual = CompareLocations(FindPointLocation(a, k), FindPointLocation(b, k));
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
@@ -67,7 +66,7 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			ÑomparisonResult expected = ÑomparisonResult::onLine;
 
-			ÑomparisonResult actual = Task1::CompareLocations(Task1::FindPointLocation(a, k), Task1::FindPointLocation(b, k));
+			ÑomparisonResult actual = CompareLocations(FindPointLocation(a, k), FindPointLocation(b, k));
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
@@ -80,10 +79,10 @@ namespace lab1zad1Test
 			Line k(1, 1);
 			ÑomparisonResult expected = ÑomparisonResult::same;
 
-			ÑomparisonResult actual = Task1::CompareLocations(Task1::FindPointLocation(a, k), Task1::FindPointLocation(b, k));
+			ÑomparisonResult actual = CompareLocations(FindPointLocation(a, k), FindPointLocation(b, k));
 
 			Assert::AreEqual((int)expected, (int)actual);
 		}
-	};
 
+	};
 }

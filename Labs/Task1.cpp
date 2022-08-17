@@ -1,36 +1,33 @@
-#include"Task1.h"
+#include "pch.h"
+#include <utility>
+#include "Task1.h"
 
-
-static class Task1
+PointLocation FindPointLocation(Point a, Line k)
 {
-public:
-   static PointLocation FindPointLocation(Point a, Line k)
+    if (a.x * k.a - a.y + k.b > 0)
     {
-        if (a.x * k.a - a.y + k.b > 0)
-        {
-            return PointLocation::firstSide;
-        }
-
-        if (a.x * k.a - a.y + k.b < 0)
-        {
-            return PointLocation::secondSide;
-        }
-
-        return PointLocation::onLine;
+        return PointLocation::firstSide;
     }
 
-   static ÑomparisonResult CompareLocations(PointLocation a, PointLocation b)
+    if (a.x * k.a - a.y + k.b < 0)
     {
-        if (a == PointLocation::onLine && b == PointLocation::onLine)
-        {
-            return ÑomparisonResult::onLine;
-        }
-
-        if (a != b && a != PointLocation::onLine && b != PointLocation::onLine)
-        {
-            return ÑomparisonResult::different;
-        }
-
-        return ÑomparisonResult::same;
+        return PointLocation::secondSide;
     }
-};
+
+    return PointLocation::onLine;
+}
+
+ÑomparisonResult CompareLocations(PointLocation a, PointLocation b)
+{
+    if (a == PointLocation::onLine && b == PointLocation::onLine)
+    {
+        return ÑomparisonResult::onLine;
+    }
+
+    if (a != b && a != PointLocation::onLine && b != PointLocation::onLine)
+    {
+        return ÑomparisonResult::different;
+    }
+
+    return ÑomparisonResult::same;
+}

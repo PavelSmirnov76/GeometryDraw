@@ -1,12 +1,13 @@
 #pragma once
-#include "Point.h"
-#include "Line.h"
 
 #ifdef Labs_EXPORTS
 #define Labs_API __declspec(dllexport)
 #else
 #define Labs_API __declspec(dllimport)
-#endif#pragma once#pragma once
+#endif
+
+#include "Point.h"
+#include "Line.h"
 
 enum class PointLocation
 {
@@ -18,13 +19,10 @@ enum class ÑomparisonResult
     different = -1, onLine = 0, same = 1
 };
 
-static class Task1
-{
-public:
-   static PointLocation FindPointLocation(Point a, Line k);
 
-   static ÑomparisonResult CompareLocations(PointLocation a, PointLocation b);
-};
+extern "C" Labs_API PointLocation FindPointLocation(Point a, Line k);
+
+extern "C" Labs_API ÑomparisonResult CompareLocations(PointLocation a, PointLocation b);
 
 
 

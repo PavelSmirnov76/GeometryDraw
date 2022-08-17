@@ -13,18 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Lab1">
-      <UniqueIdentifier>{c6766e92-7b99-4690-b6e4-3d11c836541d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Lab1\Task1">
-      <UniqueIdentifier>{0423bd3b-7c57-4265-93dc-f1dde4c22c36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Lab1">
-      <UniqueIdentifier>{6dfd27d5-523e-4ce3-9737-3cb8a5dd35f8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Lab1\Task1">
-      <UniqueIdentifier>{08518cec-3782-4ad3-8d95-a17e26d600fc}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -36,10 +24,10 @@
     <ClInclude Include="Point.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Task1.h">
-      <Filter>Файлы заголовков\Lab1\Task1</Filter>
-    </ClInclude>
     <ClInclude Include="Line.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Task1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,7 +39,7 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Task1.cpp">
-      <Filter>Исходные файлы\Lab1\Task1</Filter>
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

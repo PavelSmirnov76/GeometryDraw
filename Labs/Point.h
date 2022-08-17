@@ -4,9 +4,9 @@
 #define Labs_API __declspec(dllexport)
 #else
 #define Labs_API __declspec(dllimport)
-#endif#pragma once
+#endif
 
-struct Point
+extern "C" Labs_API struct Point
 {
     double x;
     double y;

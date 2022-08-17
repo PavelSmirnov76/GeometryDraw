@@ -1,13 +1,12 @@
 #pragma once
-#include "Point.h"
 
 #ifdef Labs_EXPORTS
 #define Labs_API __declspec(dllexport)
 #else
 #define Labs_API __declspec(dllimport)
-#endif#pragma once#pragma once
+#endif
 
-struct Line
+extern "C" Labs_API struct Line
 {
     double a;
     double b;

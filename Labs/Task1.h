@@ -19,10 +19,6 @@ enum class ÑomparisonResult
     different = -1, onLine = 0, same = 1
 };
 
-
 extern "C" Labs_API PointLocation FindPointLocation(Point a, Line k);
 
 extern "C" Labs_API ÑomparisonResult CompareLocations(PointLocation a, PointLocation b);
-
-
-

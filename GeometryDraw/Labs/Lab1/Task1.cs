@@ -1,26 +1,8 @@
-﻿namespace GeometryDraw.Labs.Lab1
+﻿using System.Runtime.InteropServices;
+
+namespace GeometryDraw.Labs.Lab1
 {
-    public class Point
-    {
-        public Point(double x, double y)
-        {
-            X = x;
-            Y = y;
-        }
-        public double X { get; set; }
-        public double Y { get; set; }
-    }
-    public class Line
-    {
-        public Line(double a, double b)
-        {
-            A = a;
-            B = b;
-        }
-        public double A { get; set; }
-        public double B { get; set; }
-    }
-    public class Task1<T> : ITask<T>
+    public class Task1 : ITask
     {
         public Task1(Point pointA, Point pointB, Line line)
         {
@@ -36,6 +18,8 @@
 
         public string Answer { set; get; }
 
+        [DllImport("Labs.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern object FindPointLocation(object a, object b);
         public void StartTask()
         {
         }

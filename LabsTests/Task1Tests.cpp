@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace LabsTests
 {
-	TEST_CLASS(LabsTests)
+	TEST_CLASS(Task1Tests)
 	{
 	public:		
 		TEST_METHOD(Point_2_2_LocationFirstSideTest)

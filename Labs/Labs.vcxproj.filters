@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab1">
+      <UniqueIdentifier>{26d7e8bd-619e-4222-806d-3b5050e7d63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\lab1">
+      <UniqueIdentifier>{bfdb580f-703e-44e6-82a6-7e4289e8b04e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -28,7 +34,10 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Task1.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Lab1</Filter>
+    </ClInclude>
+    <ClInclude Include="Task3.h">
+      <Filter>Файлы заголовков\Lab1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -39,7 +48,10 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Task1.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\lab1</Filter>
+    </ClCompile>
+    <ClCompile Include="Task3.cpp">
+      <Filter>Исходные файлы\lab1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

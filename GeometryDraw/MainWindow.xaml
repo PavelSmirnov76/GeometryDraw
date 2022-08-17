@@ -11,7 +11,38 @@
             <TabItem Name = "Lab1" Header = "Lab1" >
                 <TabControl Name = "Lab1Tasks" >
                     <TabItem Name = "Lab1Task1" Header = "Task1" >
+                        <Grid Name ="GridLab1Task1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Content="Point A" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=PointA.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=PointA.Y}" Margin="10,5,10,5"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Point B" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=PointB.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=PointB.Y}" Margin="10,5,10,5"/>
+                            <Label Grid.Row="4" Grid.Column="0" Content="Line" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=Line.A}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=Line.B}" Margin="10,5,10,5"/>
+                            <Button Grid.Row="6" Grid.Column="0" Name="ButtonRunLab1Task1" Click="ButtonRunLab1Task1_Click" Content="Start Task" Margin="10,5,10,5"/>
+                            <Label Grid.Row="7" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="8" Grid.Column="0" Text="{Binding Path=Answer}" Margin="10,5,10,5"/>
+                        </Grid>
                     </TabItem >
+
                 </TabControl >
             </TabItem >
             <TabItem Name = "Lab2" Header = "Lab2" >

@@ -4,29 +4,24 @@ using System.Runtime.InteropServices;
 
 namespace GeometryDraw.Labs.Lab1
 {
-    internal enum СomparisonResult
-    {
-        different = -1, 
-        onLine = 0, 
-        same = 1
-    }
-
-    public class Task1 : ITask, INotifyPropertyChanged
+    public class Task2 :ITask, INotifyPropertyChanged
     {
         private string answer;
-        public Task1(Point pointA, Point pointB, Line line)
+        public Task2(Point pointA, Point pointB, Point pointC, Point pointD)
         {
             PointA = pointA;
             PointB = pointB;
-            Line = line;
+            PointC = pointC;
+            PointD = pointD;
             answer = "";
         }
 
         public Point PointA { get; set; }
         public Point PointB { get; set; }
-        public Line Line { get; set; }
+        public Point PointC { get; set; }
+        public Point PointD { get; set; }
 
-        public string Answer 
+        public string Answer
         {
             set
             {
@@ -46,19 +41,18 @@ namespace GeometryDraw.Labs.Lab1
         }
 
         [DllImport(Config.pathLabsDll, CallingConvention = CallingConvention.Cdecl)]
-        private static extern int CompleteTask1(double x1, double y1, double x2, double y2, double a, double b);
+        private static extern bool completeTask2(double x1, double y1, double x2, double y2, 
+                                                double x3, double y3, double x4, double y4);
         public void StartTask()
-        {          
-            switch ((СomparisonResult)CompleteTask1(PointA.X, PointA.Y, PointB.X, PointB.Y, Line.A, Line.B))
+        {
+            switch (completeTask2(PointA.X, PointA.Y, PointB.X, PointB.Y,
+                                                        PointC.X, PointC.Y, PointD.X, PointD.Y))
             {
-                case СomparisonResult.different:
-                    Answer = "different";
+                case true:
+                    Answer = "Intersection";
                     break;
-                case СomparisonResult.onLine:
-                    Answer = "online";
-                    break;
-                case СomparisonResult.same:
-                    Answer = "same";
+                case false:
+                    Answer = "NoIntersection";
                     break;
             }
         }

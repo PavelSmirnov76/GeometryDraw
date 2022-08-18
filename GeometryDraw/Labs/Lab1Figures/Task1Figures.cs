@@ -29,7 +29,8 @@ namespace GeometryDraw.Labs.Lab1Figures
                 Y1 = 0,
                 X2 = 0,
                 Y2 = 0,
-                Stroke = Brushes.Green
+                Stroke = Brushes.Green,
+                StrokeThickness = 2
             };
         }
 

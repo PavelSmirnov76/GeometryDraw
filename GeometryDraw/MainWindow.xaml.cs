@@ -6,6 +6,7 @@ using GeometryDraw.Labs.Lab1;
 using GeometryDraw.Labs;
 using GeometryDraw.Labs.Lab1Figures;
 using System;
+using System.Windows.Ink;
 
 namespace GeometryDraw
 {
@@ -13,41 +14,81 @@ namespace GeometryDraw
     {
         const double AxisXCenter = 250;
         const double AxisYCenter = 250;
-        const double AxisXLong = 500;
-        const double AxisYLong = 500;
         const double Step = 10;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Task1 = new Task1(new Labs.Point(0, 0), new Labs.Point(0, 0), new Labs.Line(0, 0));
-            Task1Figures = new Task1Figures();
+            DrawCoordinateSystem();           
+            Lab1DataContext = new Lab1DataContext();
 
-            DataContext = Task1;
+            DataContext = Lab1DataContext;
         }
+        public Lab1DataContext Lab1DataContext { get; set; }
 
-        public Task1 Task1 { get; set; }
-        public Task1Figures Task1Figures { get; set; }
+        private void DrawCoordinateSystem()
+        {
+            CoordinateSystem.Children.Clear();
+
+            var AxisX = new System.Windows.Shapes.Line()
+            {
+                X1 = 250,
+                Y1 = 0,
+                X2 = 250,
+                Y2 = 500,
+                Stroke = Brushes.Black
+            };
+            var AxisY = new System.Windows.Shapes.Line()
+            {
+                X1 = 0,
+                Y1 = 250,
+                X2 = 500,
+                Y2 = 250,
+                Stroke = Brushes.Black
+            };
+
+            CoordinateSystem.Children.Add(AxisX);
+            CoordinateSystem.Children.Add(AxisY);
+        }
 
         private void ButtonRunLab1Task1_Click(object sender, RoutedEventArgs e)
         {
-            Task1.StartTask();
+            DrawCoordinateSystem();
+            Lab1DataContext.Task1.StartTask();
             DrawTask1();
+        }
+
+        private void ButtonRunLab1Task2_Click(object sender, RoutedEventArgs e)
+        {
+            DrawCoordinateSystem();
+            Lab1DataContext.Task2.StartTask();
+            DrawTask2();
         }
 
         public void DrawTask1()
         {
-            DrawEllipse(Task1Figures.PointA, Task1.PointA.X, Task1.PointA.Y);
-            DrawEllipse(Task1Figures.PointB, Task1.PointB.X, Task1.PointB.Y);
-            DrawLine(Task1Figures.Line, Task1.Line.A, Task1.Line.B);
+            DrawEllipse(Lab1DataContext.Task1Figures.PointA, Lab1DataContext.Task1.PointA.X, Lab1DataContext.Task1.PointA.Y);
+            DrawEllipse(Lab1DataContext.Task1Figures.PointB, Lab1DataContext.Task1.PointB.X, Lab1DataContext.Task1.PointB.Y);
+            DrawLine(Lab1DataContext.Task1Figures.Line, Lab1DataContext.Task1.Line.A, Lab1DataContext.Task1.Line.B);
 
-            if (!CoordinateSystem.Children.Contains(Task1Figures.PointA))
-            {
-                CoordinateSystem.Children.Add(Task1Figures.PointA);
-                CoordinateSystem.Children.Add(Task1Figures.PointB);
-                CoordinateSystem.Children.Add(Task1Figures.Line);
-            }
+            CoordinateSystem.Children.Add(Lab1DataContext.Task1Figures.PointA);
+            CoordinateSystem.Children.Add(Lab1DataContext.Task1Figures.PointB);
+            CoordinateSystem.Children.Add(Lab1DataContext.Task1Figures.Line);
+        }
+        public void DrawTask2()
+        {
+            DrawEllipse(Lab1DataContext.Task2Figures.PointA, Lab1DataContext.Task2.PointA.X, Lab1DataContext.Task2.PointA.Y);
+            DrawEllipse(Lab1DataContext.Task2Figures.PointC, Lab1DataContext.Task2.PointC.X, Lab1DataContext.Task2.PointC.Y);
+            DrawLine(Lab1DataContext.Task2Figures.LineAB, Lab1DataContext.Task2.PointA.X, Lab1DataContext.Task2.PointA.Y,
+                                                        Lab1DataContext.Task2.PointB.X, Lab1DataContext.Task2.PointB.Y);
+            DrawLine(Lab1DataContext.Task2Figures.LineCD, Lab1DataContext.Task2.PointC.X, Lab1DataContext.Task2.PointC.Y,
+                                                        Lab1DataContext.Task2.PointD.X, Lab1DataContext.Task2.PointD.Y);
+
+            CoordinateSystem.Children.Add(Lab1DataContext.Task2Figures.PointA);
+            CoordinateSystem.Children.Add(Lab1DataContext.Task2Figures.PointC);
+            CoordinateSystem.Children.Add(Lab1DataContext.Task2Figures.LineAB);
+            CoordinateSystem.Children.Add(Lab1DataContext.Task2Figures.LineCD);
         }
         private static void DrawEllipse(Ellipse ellipse, double x, double y)
         {
@@ -56,10 +97,22 @@ namespace GeometryDraw
         }
         private static void DrawLine(System.Windows.Shapes.Line line, double a, double b)
         {
-            line.X1 = 0;
-            line.Y1 = AxisYLong - b;
-            line.X2 = AxisXLong;
-            line.Y2 = AxisYLong - (a * AxisXLong + b);
+            double x1 = -250;
+            double y1 = a * x1 + b;
+            double x2 = 250;
+            double y2 = a * x2 + b;
+
+            line.X1 = AxisXCenter + x1 * Step;
+            line.Y1 = AxisYCenter - y1 * Step;
+            line.X2 = AxisXCenter + x2 * Step;
+            line.Y2 = AxisYCenter - y2 * Step;
+        }
+        private static void DrawLine(System.Windows.Shapes.Line line, double x1, double y1, double x2, double y2)
+        {
+            line.X1 = AxisXCenter + x1 * Step;
+            line.Y1 = AxisYCenter - y1 * Step;
+            line.X2 = AxisXCenter + x2 * Step;
+            line.Y2 = AxisYCenter - y2 * Step;
         }
     }
 }

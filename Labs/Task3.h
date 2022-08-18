@@ -8,5 +8,3 @@
 
 #include "Point.h"
 #include "Line.h"
-
-// код 

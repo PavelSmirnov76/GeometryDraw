@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeometryDraw"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="620">
+        Title="MainWindow" Height="515" Width="700">
     <StackPanel Orientation="Horizontal">
-        <TabControl Name = "Labs" Height="600" Width="200" >
+        <TabControl Name = "Labs" Height="500" Width="200" >
             <TabItem Name = "Lab1" Header = "Lab1" >
                 <TabControl Name = "Lab1Tasks" >
                     <TabItem Name = "Lab1Task1" Header = "Task1" >
@@ -52,13 +52,11 @@
                 </TabControl >
             </TabItem >
         </TabControl>
-        <Grid Height="600" Width="400" Name ="CoordinateSystem">
-            <Line Name="AxisX"  X1="200" Y1="0" X2="200" Y2 ="600"  Stroke="Black" />
-            <Line X1="195" Y1="10" X2="200" Y2 ="0"  Stroke="Black" />
-            <Line X1="200" Y1="0" X2="205" Y2 ="10"  Stroke="Black" />
-            <Line  Name="AxisY" X1="0" Y1="300" X2="400" Y2 ="300"  Stroke="Black" />
-            <Line X1="390" Y1="295" X2="400" Y2 ="300"  Stroke="Black" />
-            <Line X1="400" Y1="300" X2="390" Y2 ="305"  Stroke="Black" />
+        <Grid Height="500" Width="500">
+            <Canvas Height="500" Width="500" Name ="CoordinateSystem">
+                <Line Name="AxisX"  X1="250" Y1="0" X2="250" Y2 ="500"  Stroke="Black" />
+                <Line Name="AxisY" X1="0" Y1="250" X2="500" Y2 ="250"  Stroke="Black" />
+            </Canvas>
         </Grid>
     </StackPanel>
 </Window>

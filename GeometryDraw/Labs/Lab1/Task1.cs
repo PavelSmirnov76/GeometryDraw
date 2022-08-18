@@ -1,15 +1,19 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Configuration;
+using System.Collections.Specialized;
+using System.Diagnostics;
 
 namespace GeometryDraw.Labs.Lab1
 {
-    public enum СomparisonResult
+    internal enum СomparisonResult
     {
         different = -1, 
         onLine = 0, 
         same = 1
     }
+
     public class Task1 : ITask, INotifyPropertyChanged
     {
         private string answer;
@@ -44,20 +48,20 @@ namespace GeometryDraw.Labs.Lab1
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
-        [DllImport("Labs.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(Config.pathLabsDll, CallingConvention = CallingConvention.Cdecl)]
         private static extern int CompleteTask1(double x1, double y1, double x2, double y2, double a, double b);
         public void StartTask()
-        {
-            var result = CompleteTask1(PointA.X, PointA.Y, PointB.X, PointB.Y, Line.A, Line.B);
+        {          
+            var result = (СomparisonResult)CompleteTask1(PointA.X, PointA.Y, PointB.X, PointB.Y, Line.A, Line.B);
             switch (result)
             {
-                case -1:
+                case СomparisonResult.different:
                     Answer = "different";
                     break;
-                case 0:
-                    Answer = "onLine";
+                case СomparisonResult.onLine:
+                    Answer = "online";
                     break;
-                case 1:
+                case СomparisonResult.same:
                     Answer = "same";
                     break;
             }

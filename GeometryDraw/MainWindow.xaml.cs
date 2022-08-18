@@ -12,15 +12,16 @@ namespace GeometryDraw
         {
             InitializeComponent();
 
-            Task1 = new Task1<int>(new Labs.Lab1.Point(0, 0), new Labs.Lab1.Point(0, 0), new Line(0, 0));
+            Task1 = new Task1(new Labs.Point(0, 0), new Labs.Point(0, 0), new Labs.Line(0, 0));
 
             DataContext = Task1;
         }
 
-        public Task1<int> Task1 { get; set; }
+        public Task1 Task1 { get; set; }
 
         private void ButtonRunLab1Task1_Click(object sender, RoutedEventArgs e)
         {
+            Task1.StartTask();
         }
     }
 }

@@ -17,5 +17,5 @@ enum class ÑomparisonResult
 
 extern "C" Labs_API ÑomparisonResult CompareLocations(PointLocation a, PointLocation b);
 
-extern "C" Labs_API ÑomparisonResult CompleteTask1(Point a, Point b, Line k);
+extern "C" Labs_API int CompleteTask1(double x1, double y1, double x2, double y2, double a, double b);
 

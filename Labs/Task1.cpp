@@ -2,20 +2,6 @@
 #include <utility>
 #include "Task1.h"
 
-PointLocation FindPointLocation(Point a, Line k)
-{
-    if (a.x * k.a - a.y + k.b > 0)
-    {
-        return PointLocation::firstSide;
-    }
-
-    if (a.x * k.a - a.y + k.b < 0)
-    {
-        return PointLocation::secondSide;
-    }
-
-    return PointLocation::onLine;
-}
 
 ÑomparisonResult CompareLocations(PointLocation a, PointLocation b)
 {
@@ -32,9 +18,10 @@ PointLocation FindPointLocation(Point a, Line k)
     return ÑomparisonResult::same;
 }
 
-ÑomparisonResult CompleteTask1(Point a, Point b, Line k)
+int CompleteTask1(double x1, double y1, double x2, double y2, double a, double b)
 {
-    return CompareLocations(FindPointLocation(a,k), FindPointLocation(b, k));
+    return (int)CompareLocations(FindPointLocation(Point(x1, y1), Line(a, b)),
+                                    FindPointLocation(Point(x2, y2), Line(a, b)));
 }
 
 

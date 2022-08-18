@@ -39,6 +39,9 @@
     <ClInclude Include="Task3.h">
       <Filter>Файлы заголовков\Lab1</Filter>
     </ClInclude>
+    <ClInclude Include="PointLocation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -52,9 +55,6 @@
     </ClCompile>
     <ClCompile Include="Task3.cpp">
       <Filter>Исходные файлы\lab1</Filter>
-    </ClCompile>
-    <ClCompile Include="PointLocation.h">
-      <Filter>Файлы заголовков</Filter>
     </ClCompile>
     <ClCompile Include="PointLocation.cpp">
       <Filter>Исходные файлы</Filter>

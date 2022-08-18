@@ -8,6 +8,7 @@
 
 #include "Point.h"
 #include "Line.h"
+#include "pch.h"
 
 enum class PointLocation
 {

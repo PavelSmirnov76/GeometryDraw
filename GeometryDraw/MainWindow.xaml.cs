@@ -25,7 +25,7 @@ namespace GeometryDraw
         }
         private void ButtonRunLab1Task3_Click(object sender, RoutedEventArgs e)
         {
-
+            Lab1DataContext.Task3.StartTask();
         }
     }
 }

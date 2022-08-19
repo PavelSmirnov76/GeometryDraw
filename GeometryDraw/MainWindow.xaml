@@ -159,7 +159,7 @@
                             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Task3.PointD.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=Task3.PointD.Y}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=Task3.PointA.Z}" Margin="10,5,10,5"/>
-                            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task2_Click" Content="Start Task" Margin="10,5,10,5"/>
+                            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task3_Click" Content="Start Task" Margin="10,5,10,5"/>
                             <Label Grid.Row="5" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task3.Answer}" Margin="10,5,10,5"/>
                             <Canvas Grid.RowSpan="9" Grid.Column="4" Height="500" Width="500">

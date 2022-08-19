@@ -126,8 +126,9 @@
                         <Grid Name ="GridLab1Task3">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="70"/>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="40"/>
                                 <ColumnDefinition Width="500"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -145,19 +146,23 @@
                             <Label Grid.Row="0" Grid.Column="0" Content="Point A" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Task3.PointA.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Task3.PointA.Y}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding Path=Task3.PointA.Z}" Margin="10,5,10,5"/>
                             <Label Grid.Row="1" Grid.Column="0" Content="Point B" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Task3.PointB.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Task3.PointB.Y}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Path=Task3.PointA.Z}" Margin="10,5,10,5"/>
                             <Label Grid.Row="2" Grid.Column="0" Content="Point C" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Task3.PointC.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Task3.PointC.Y}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=Task3.PointA.Z}" Margin="10,5,10,5"/>
                             <Label Grid.Row="3" Grid.Column="0" Content="Point D" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Task3.PointD.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=Task3.PointD.Y}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=Task3.PointA.Z}" Margin="10,5,10,5"/>
                             <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task2_Click" Content="Start Task" Margin="10,5,10,5"/>
                             <Label Grid.Row="5" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task3.Answer}" Margin="10,5,10,5"/>
-                            <Canvas Grid.RowSpan="9" Grid.Column="3" Height="500" Width="500">
+                            <Canvas Grid.RowSpan="9" Grid.Column="4" Height="500" Width="500">
                                 <Line X1="250" Y1="0" X2="250" Y2="500" Stroke="Black"/>
                                 <Line X1="0" Y1="250" X2="500" Y2="250" Stroke="Black"/>
                                 <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4"                                         

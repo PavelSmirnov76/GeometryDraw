@@ -7,4 +7,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Labs\Lab1Figures\" />
+  </ItemGroup>
+
 </Project>

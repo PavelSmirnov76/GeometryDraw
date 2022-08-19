@@ -41,12 +41,12 @@ namespace GeometryDraw.Labs.Lab1
         }
 
         [DllImport(Config.pathLabsDll, CallingConvention = CallingConvention.Cdecl)]
-        private static extern bool completeTask3(double x1, double y1, double x2, double y2,
-                                                double x3, double y3, double x4, double y4);
+        private static extern bool completeTask3(double x1, double y1, double z1, double x2, double y2, double z2,
+                                                double x3, double y3, double z3, double x4, double y4, double z4);
         public void StartTask()
         {
-            switch (completeTask3(PointA.X, PointA.Y, PointB.X, PointB.Y,
-                                                        PointC.X, PointC.Y, PointD.X, PointD.Y))
+            switch (completeTask3(PointA.X, PointA.Y, PointA.Z, PointB.X, PointB.Y, PointB.Z,
+                                                        PointC.X, PointC.Y, PointC.Z, PointD.X, PointD.Y, PointD.Z))
             {
                 case true:
                     Answer = "InAngle";

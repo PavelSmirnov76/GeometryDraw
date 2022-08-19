@@ -125,9 +125,10 @@
                     <TabItem Header="Task3">
                         <Grid Name ="GridLab1Task3">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40*"/>
-                                <ColumnDefinition Width="30*"/>
-                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="500"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
@@ -153,9 +154,26 @@
                             <Label Grid.Row="3" Grid.Column="0" Content="Point D" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Task3.PointD.X}" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=Task3.PointD.Y}" Margin="10,5,10,5"/>
-                            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task3_Click" Content="Start Task" Margin="10,5,10,5"/>
+                            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task2_Click" Content="Start Task" Margin="10,5,10,5"/>
                             <Label Grid.Row="5" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task3.Answer}" Margin="10,5,10,5"/>
+                            <Canvas Grid.RowSpan="9" Grid.Column="3" Height="500" Width="500">
+                                <Line X1="250" Y1="0" X2="250" Y2="500" Stroke="Black"/>
+                                <Line X1="0" Y1="250" X2="500" Y2="250" Stroke="Black"/>
+                                <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4"                                         
+                                         Canvas.Left="{Binding Path=Task3.PointA.X, Converter={StaticResource coordinateXConverterEllipse}}"
+                                         Canvas.Top="{Binding Path=Task3.PointA.Y, Converter={StaticResource coordinateYConverterEllipse}}"/>
+                                <Line Stroke = "Green" StrokeThickness = "2" 
+                                      X1="{Binding Path=Task3.PointA.X, Converter={StaticResource coordinateXConverter}}"
+                                      Y1="{Binding Path=Task3.PointA.Y, Converter={StaticResource coordinateYConverter}}" 
+                                      X2="{Binding Path=Task3.PointB.X, Converter={StaticResource coordinateXConverter}}" 
+                                      Y2="{Binding Path=Task3.PointB.Y, Converter={StaticResource coordinateYConverter}}"/>
+                                <Line Stroke = "Green" StrokeThickness = "2" 
+                                      X1="{Binding Path=Task3.PointB.X, Converter={StaticResource coordinateXConverter}}"
+                                      Y1="{Binding Path=Task3.PointB.Y, Converter={StaticResource coordinateYConverter}}" 
+                                      X2="{Binding Path=Task3.PointC.X, Converter={StaticResource coordinateXConverter}}" 
+                                      Y2="{Binding Path=Task3.PointC.Y, Converter={StaticResource coordinateYConverter}}"/>
+                            </Canvas>
                         </Grid>
                     </TabItem>
                 </TabControl >

@@ -49,10 +49,10 @@ namespace GeometryDraw.Labs.Lab1
                                                         PointC.X, PointC.Y, PointD.X, PointD.Y))
             {
                 case true:
-                    Answer = "Intersection";
+                    Answer = "InAngle";
                     break;
                 case false:
-                    Answer = "NoIntersection";
+                    Answer = "NotInAngle";
                     break;
             }
         }

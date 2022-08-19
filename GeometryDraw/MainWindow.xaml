@@ -3,19 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GeometryDraw"
+        xmlns:local="clr-namespace:GeometryDraw" xmlns:src="clr-namespace:GeometryDraw.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="515" Width="700">
+        Title="MainWindow" Height="565" Width="700">
+    <Window.Resources>
+        <src:CoordinateXConverter x:Key="coordinateXConverter"/>
+        <src:CoordinateYConverter x:Key="coordinateYConverter"/>
+        <src:CoordinateXConverterEllipse x:Key="coordinateXConverterEllipse"/>
+        <src:CoordinateYConverterEllipse x:Key="coordinateYConverterEllipse"/>
+    </Window.Resources>
     <StackPanel Orientation="Horizontal">
-        <TabControl Name = "Labs" Height="500" Width="200" >
+        <TabControl Name = "Labs" Height="550" Width="700" >
             <TabItem Name = "Lab1" Header = "Lab1" >
                 <TabControl Name = "Lab1Tasks" >
                     <TabItem Name = "Lab1Task1" Header = "Task1" >
                         <Grid Name ="GridLab1Task1">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40*"/>
-                                <ColumnDefinition Width="30*"/>
-                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="500"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
@@ -41,14 +48,30 @@
                             <Button Grid.Row="3" Grid.ColumnSpan="2" Name="ButtonRunLab1Task1" Click="ButtonRunLab1Task1_Click" Content="Start Task" Margin="10,5,10,5"/>
                             <Label Grid.Row="4" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task1.Answer}" Margin="10,5,10,5"/>
+                            <Canvas Grid.RowSpan="9" Grid.Column="3" Height="500" Width="500" Name ="CoordinateSystem">
+                                <Line X1="250" Y1="0" X2="250" Y2="500" Stroke="Black"/>
+                                <Line X1="0" Y1="250" X2="500" Y2="250" Stroke="Black"/>
+                                <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4"                                         
+                                         Canvas.Left="{Binding Path=Task1.PointA.X, Converter={StaticResource coordinateXConverterEllipse}}"
+                                         Canvas.Top="{Binding Path=Task1.PointA.Y, Converter={StaticResource coordinateYConverterEllipse}}"/>
+                                <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4" 
+                                         Canvas.Left="{Binding Path=Task1.PointB.X, Converter={StaticResource coordinateXConverterEllipse}}"
+                                         Canvas.Top="{Binding Path=Task1.PointB.Y, Converter={StaticResource coordinateYConverterEllipse}}"/>
+                                <Line Stroke = "Green" StrokeThickness = "2" 
+                                      X1="{Binding Path=Task1.Line.X1, Converter={StaticResource coordinateXConverter}}"
+                                      Y1="{Binding Path=Task1.Line.Y1, Converter={StaticResource coordinateYConverter}}" 
+                                      X2="{Binding Path=Task1.Line.X2, Converter={StaticResource coordinateXConverter}}" 
+                                      Y2="{Binding Path=Task1.Line.Y2, Converter={StaticResource coordinateYConverter}}"/>
+                            </Canvas>
                         </Grid>
                     </TabItem >
                     <TabItem Header="Task2">
                         <Grid Name ="GridLab1Task2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40*"/>
-                                <ColumnDefinition Width="30*"/>
-                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="500"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
@@ -79,7 +102,42 @@
                             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task2.Answer}" Margin="10,5,10,5"/>
                         </Grid>
                     </TabItem>
-
+                    <TabItem Header="Task3">
+                        <Grid Name ="GridLab1Task3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="30*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Content="Point A" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Task3.PointA.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Path=Task3.PointA.Y}" Margin="10,5,10,5"/>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Point B" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Task3.PointB.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Task3.PointB.Y}" Margin="10,5,10,5"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Point C" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Task3.PointC.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Task3.PointC.Y}" Margin="10,5,10,5"/>
+                            <Label Grid.Row="3" Grid.Column="0" Content="Point D" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Task3.PointD.X}" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=Task3.PointD.Y}" Margin="10,5,10,5"/>
+                            <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task3" Click="ButtonRunLab1Task3_Click" Content="Start Task" Margin="10,5,10,5"/>
+                            <Label Grid.Row="5" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task3.Answer}" Margin="10,5,10,5"/>
+                        </Grid>
+                    </TabItem>
                 </TabControl >
             </TabItem >
             <TabItem Name = "Lab2" Header = "Lab2" >
@@ -89,10 +147,5 @@
                 </TabControl >
             </TabItem >
         </TabControl>
-        <Grid Height="500" Width="500">
-            <Canvas Height="500" Width="500" Name ="CoordinateSystem">
-                
-            </Canvas>
-        </Grid>
     </StackPanel>
 </Window>

@@ -100,6 +100,26 @@
                             <Button Grid.Row="4" Grid.ColumnSpan="2" Name="ButtonRunLab1Task2" Click="ButtonRunLab1Task2_Click" Content="Start Task" Margin="10,5,10,5"/>
                             <Label Grid.Row="5" Grid.Column="0" Content="Answer" Margin="10,5,10,5"/>
                             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Task2.Answer}" Margin="10,5,10,5"/>
+                            <Canvas Grid.RowSpan="9" Grid.Column="3" Height="500" Width="500">
+                                <Line X1="250" Y1="0" X2="250" Y2="500" Stroke="Black"/>
+                                <Line X1="0" Y1="250" X2="500" Y2="250" Stroke="Black"/>
+                                <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4"                                         
+                                         Canvas.Left="{Binding Path=Task2.PointA.X, Converter={StaticResource coordinateXConverterEllipse}}"
+                                         Canvas.Top="{Binding Path=Task2.PointA.Y, Converter={StaticResource coordinateYConverterEllipse}}"/>
+                                <Ellipse Width = "5" Height = "5" Stroke = "Red" StrokeThickness = "4" 
+                                         Canvas.Left="{Binding Path=Task2.PointC.X, Converter={StaticResource coordinateXConverterEllipse}}"
+                                         Canvas.Top="{Binding Path=Task2.PointC.Y, Converter={StaticResource coordinateYConverterEllipse}}"/>
+                                <Line Stroke = "Green" StrokeThickness = "2" 
+                                      X1="{Binding Path=Task2.PointA.X, Converter={StaticResource coordinateXConverter}}"
+                                      Y1="{Binding Path=Task2.PointA.Y, Converter={StaticResource coordinateYConverter}}" 
+                                      X2="{Binding Path=Task2.PointB.X, Converter={StaticResource coordinateXConverter}}" 
+                                      Y2="{Binding Path=Task2.PointB.Y, Converter={StaticResource coordinateYConverter}}"/>
+                                <Line Stroke = "Green" StrokeThickness = "2" 
+                                      X1="{Binding Path=Task2.PointC.X, Converter={StaticResource coordinateXConverter}}"
+                                      Y1="{Binding Path=Task2.PointC.Y, Converter={StaticResource coordinateYConverter}}" 
+                                      X2="{Binding Path=Task2.PointD.X, Converter={StaticResource coordinateXConverter}}" 
+                                      Y2="{Binding Path=Task2.PointD.Y, Converter={StaticResource coordinateYConverter}}"/>
+                            </Canvas>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Task3">

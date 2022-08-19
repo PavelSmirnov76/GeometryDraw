@@ -4,14 +4,14 @@
 
 PointLocation FindPointLocation(Point a, Line k)
 {
-    if (a.x * k.a - a.y + k.b > 0)
+    if (a.x * k.a + k.b * a.y + k.c > 0)
     {
-        return PointLocation::firstSide;
+        return PointLocation::rightSide;
     }
 
-    if (a.x * k.a - a.y + k.b < 0)
+    if (a.x * k.a + k.b * a.y + k.c < 0)
     {
-        return PointLocation::secondSide;
+        return PointLocation::leftSide;
     }
 
     return PointLocation::onLine;

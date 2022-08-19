@@ -12,7 +12,7 @@
 
 enum class PointLocation
 {
-    secondSide = -1, onLine = 0, firstSide = 1
+    leftSide = -1, onLine = 0, rightSide = 1
 };
 
 extern "C" Labs_API PointLocation FindPointLocation(Point a, Line k);

@@ -9,11 +9,11 @@ namespace LabsTests
 	TEST_CLASS(Task1Tests)
 	{
 	public:		
-		TEST_METHOD(Point_2_2_LocationFirstSideTest)
+		TEST_METHOD(Point_2_2_LocationTest)
 		{
 			Point a(2, 2);
 			Line k(1, 1);
-			PointLocation expected = PointLocation::firstSide;
+			PointLocation expected = PointLocation::rightSide;
 
 			PointLocation actual = FindPointLocation(a, k);
 
@@ -31,11 +31,11 @@ namespace LabsTests
 			Assert::AreEqual((int)expected, (int)actual);
 		}
 
-		TEST_METHOD(Point_2_2_LocationSecondSideTest)
+		TEST_METHOD(Point_2_2_LocationleftSideTest)
 		{
 			Point a(2, 4);
 			Line k(1, 1);
-			PointLocation expected = PointLocation::secondSide;
+			PointLocation expected = PointLocation::leftSide;
 
 			PointLocation actual = FindPointLocation(a, k);
 

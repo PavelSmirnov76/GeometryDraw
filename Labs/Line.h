@@ -10,22 +10,26 @@ extern "C" Labs_API struct Line
 {
     double a;
     double b;
+    double c;
+
     Point v;
     Point n;
 
-    Line(double a, double b)
+    Line(double a, double c)
     {
         this->a = a;
-        this->b = b;
-        v = Point(1, a + b);
-        n = Point(0, b);
+        this->b = -1;
+        this->c = c;
+        v = Point(1, a + c);
+        n = Point(0, c);
     }
     Line(Point v, Point n)
     {     
         this->v = v;
         this->n = n;
-        this->a = v.y-n.y;
-        this->b = v.x*n.y - n.y*v.x;
+        this->a = n.y-v.y;
+        this->b = v.x - n.x;
+        this->c = v.x*(v.y - n.y) + v.y*(n.x - v.x);
     }
 
 };

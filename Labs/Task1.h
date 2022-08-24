@@ -6,8 +6,6 @@
 #define Labs_API __declspec(dllimport)
 #endif
 
-#include "Point.h"
-#include "Line.h"
 #include "PointLocation.h"
 
 enum class ÑomparisonResult

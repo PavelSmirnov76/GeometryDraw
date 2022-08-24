@@ -100,7 +100,6 @@ namespace LabsTests
 
 			Assert::IsTrue(actual);
 		}
-		//
 		TEST_METHOD(Baaaaaaaaaaaaaaaaaaaaaaa)
 		{
 			Point a = Point(2, 2);

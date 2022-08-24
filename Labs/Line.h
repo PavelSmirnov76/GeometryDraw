@@ -1,12 +1,7 @@
 #pragma once
+#include "Point.h"
 
-#ifdef Labs_EXPORTS
-#define Labs_API __declspec(dllexport)
-#else
-#define Labs_API __declspec(dllimport)
-#endif
-
-extern "C" Labs_API struct Line
+struct Line
 {
     double a;
     double b;
@@ -22,14 +17,23 @@ extern "C" Labs_API struct Line
         this->c = c;
         v = Point(1, a + c);
         n = Point(0, c);
-    }
+    };
+
     Line(Point v, Point n)
-    {     
+    {
         this->v = v;
         this->n = n;
-        this->a = n.y-v.y;
+        this->a = n.y - v.y;
         this->b = v.x - n.x;
-        this->c = v.x*(v.y - n.y) + v.y*(n.x - v.x);
-    }
+        this->c = v.x * (v.y - n.y) + v.y * (n.x - v.x);
+    };
 
+    Line()
+    {
+        a = 0;
+        b = 0;
+        c = 0;
+        v = Point();
+        n = Point();
+    }
 };

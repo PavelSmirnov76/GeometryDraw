@@ -6,13 +6,13 @@ namespace GeometryDraw.Labs
     {
         public Task1 Task1 { get; set; }
         public Task2 Task2 { get; set; }
-        public Task2 Task3 { get; set; }
+        public Task3 Task3 { get; set; }
 
         public Lab1DataContext()
         {
             Task1 = new Task1(new Point(0, 0), new Point(0, 0), new Line(0, 0));
             Task2 = new Task2(new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0));
-            Task3 = new Task2(new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0));
+            Task3 = new Task3(new Point(0, 0), new Point(0, 0), new Point(0, 0), new Point(0, 0));
         }
     }
 }

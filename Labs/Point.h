@@ -1,12 +1,6 @@
 #pragma once
 
-#ifdef Labs_EXPORTS
-#define Labs_API __declspec(dllexport)
-#else
-#define Labs_API __declspec(dllimport)
-#endif
-
-extern "C" Labs_API struct Point
+struct Point
 {
     double x;
     double y;
@@ -26,7 +20,9 @@ extern "C" Labs_API struct Point
     }
     Point()
     {
-
+        x = 0;
+        y = 0;
+        z = 0;
     }
 };
 

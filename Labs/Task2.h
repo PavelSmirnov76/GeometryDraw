@@ -7,7 +7,6 @@
 #endif
 
 #include "Point.h"
-#include "Line.h"
 
 extern "C" Labs_API bool isIntersection(Point a, Point b, Point c, Point d);
 

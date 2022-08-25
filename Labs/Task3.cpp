@@ -14,16 +14,24 @@
 
 }
 
- bool inAngle(Point a, Point b, Point c, Point d)
-{
-	 Line ab(b, a);
-	 Line bc(b, c);
+ double angle_point(Point a, Point b, Point c)
+ {
+	 double x1 = a.x - b.x, x2 = c.x - b.x;
+	 double y1 = a.y - b.y, y2 = c.y - b.y;
+	 double d1 = sqrt(x1 * x1 + y1 * y1);
+	 double d2 = sqrt(x2 * x2 + y2 * y2);
+	 return acos((x1 * x2 + y1 * y2) / (d1 * d2));
+ }
 
-	if(FindPointLocation(d, ab) == PointLocation::rightSide && FindPointLocation(d, bc) == PointLocation::leftSide) // мне не нравится это место
+bool inAngle(Point a, Point b, Point c, Point d)
+{	
+	double abc = angle_point(a, b, c);
+	double abd = angle_point(a, b, d);
+	double dbc = angle_point(d, b, c);
+	if (round(abc - abd - dbc) / 1000000 == 0)
 	{
 		return true;
 	}
-
 	return false;
 }
 
